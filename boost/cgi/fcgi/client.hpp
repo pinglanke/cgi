@@ -41,7 +41,7 @@ BOOST_CGI_NAMESPACE_BEGIN
   /// A client that uses a TCP socket that owned by it.
   /// Construct
   template<>
-  basic_client<
+  inline basic_client<
       ::BOOST_CGI_NAMESPACE::common::tags::fcgi
   >::basic_client()
     : request_id_(-1)
@@ -65,7 +65,7 @@ BOOST_CGI_NAMESPACE_BEGIN
    * connections after N requests).
    */
   template<>
-  boost::system::error_code
+  inline boost::system::error_code
   basic_client<
       ::BOOST_CGI_NAMESPACE::common::tags::fcgi
   >::close(boost::uint64_t app_status, boost::system::error_code& ec)
@@ -160,7 +160,7 @@ BOOST_CGI_NAMESPACE_BEGIN
   }
   
   template<>
-  void
+  inline void
   basic_client<
       ::BOOST_CGI_NAMESPACE::common::tags::fcgi
   >::handle_write(std::size_t bytes_transferred, boost::system::error_code& ec)
