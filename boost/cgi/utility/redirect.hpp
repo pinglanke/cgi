@@ -29,6 +29,7 @@ BOOST_CGI_NAMESPACE_BEGIN
    {
      typedef typename RequestT::string_type string_type;
      string_type url(dest);
+#if 0
      if (url.find("://") == string_type::npos) {
        url = secure ? "https" : "http";
        url += "://" + req.server_name();
@@ -37,6 +38,7 @@ BOOST_CGI_NAMESPACE_BEGIN
        else
          url += "/" + dest;
      }
+#endif
      return basic_header<typename RequestT::char_type>("Location", url);
    }
 
